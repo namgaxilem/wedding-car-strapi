@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "xe_dich_vus",
+  "info": {
+    "singularName": "xe-dich-vu",
+    "pluralName": "xe-dich-vus",
+    "displayName": "Xe dịch vụ"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thong_tin_xe_common": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.thong-tin-xe"
+    }
+  }
+}

@@ -640,6 +640,67 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiXeCuoiXeCuoi extends Struct.CollectionTypeSchema {
+  collectionName: 'xe_cuois';
+  info: {
+    singularName: 'xe-cuoi';
+    pluralName: 'xe-cuois';
+    displayName: 'Xe c\u01B0\u1EDBi';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    thong_tin_xe_common: Schema.Attribute.Component<
+      'shared.thong-tin-xe',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::xe-cuoi.xe-cuoi'
+    >;
+  };
+}
+
+export interface ApiXeDichVuXeDichVu extends Struct.CollectionTypeSchema {
+  collectionName: 'xe_dich_vus';
+  info: {
+    singularName: 'xe-dich-vu';
+    pluralName: 'xe-dich-vus';
+    displayName: 'Xe d\u1ECBch v\u1EE5';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    thong_tin_xe_common: Schema.Attribute.Component<
+      'shared.thong-tin-xe',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::xe-dich-vu.xe-dich-vu'
+    >;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -1020,6 +1081,8 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::xe-cuoi.xe-cuoi': ApiXeCuoiXeCuoi;
+      'api::xe-dich-vu.xe-dich-vu': ApiXeDichVuXeDichVu;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

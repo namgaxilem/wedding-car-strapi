@@ -1,5 +1,27 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SharedThongTinXe extends Struct.ComponentSchema {
+  collectionName: 'components_shared_thong_tin_xes';
+  info: {
+    displayName: 'Th\u00F4ng tin xe';
+    icon: 'car';
+    description: '';
+  };
+  attributes: {
+    ten_xe: Schema.Attribute.String;
+    gia_thue_theo_gio: Schema.Attribute.BigInteger;
+    hinh_xe: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    thong_tin_chi_tiet: Schema.Attribute.RichText;
+    so_cho_ngoi: Schema.Attribute.Integer;
+    hinh_xe_dai_dien: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -65,6 +87,7 @@ export interface SharedMedia extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.thong-tin-xe': SharedThongTinXe;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;

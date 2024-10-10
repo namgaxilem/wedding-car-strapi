@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "xe_cuois",
+  "info": {
+    "singularName": "xe-cuoi",
+    "pluralName": "xe-cuois",
+    "displayName": "Xe cưới",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thong_tin_xe_common": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.thong-tin-xe"
+    }
+  }
+}

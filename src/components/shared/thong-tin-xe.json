@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_thong_tin_xes",
+  "info": {
+    "displayName": "Thông tin xe",
+    "icon": "car",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ten_xe": {
+      "type": "string"
+    },
+    "gia_thue_theo_gio": {
+      "type": "biginteger"
+    },
+    "hinh_xe": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "thong_tin_chi_tiet": {
+      "type": "richtext"
+    },
+    "so_cho_ngoi": {
+      "type": "integer"
+    },
+    "hinh_xe_dai_dien": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
