@@ -19,6 +19,10 @@ export interface SharedThongTinXe extends Struct.ComponentSchema {
     hinh_xe_dai_dien: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    thong_tin_ngan_gon: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
   };
 }
 

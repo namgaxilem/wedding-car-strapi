@@ -31,14 +31,19 @@
       "type": "integer"
     },
     "hinh_xe_dai_dien": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "thong_tin_ngan_gon": {
+      "type": "text",
+      "maxLength": 155
     }
   }
 }
