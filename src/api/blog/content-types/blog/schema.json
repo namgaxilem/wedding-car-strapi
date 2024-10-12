@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tieu_de": {
+      "type": "string"
+    },
+    "hinh_dai_dien": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "noi_dung_chinh": {
+      "type": "richtext"
+    },
+    "mo_ta_ngan_gon": {
+      "type": "string",
+      "maxLength": 155
+    }
+  }
+}

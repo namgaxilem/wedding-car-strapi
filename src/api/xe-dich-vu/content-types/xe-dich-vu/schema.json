@@ -4,7 +4,8 @@
   "info": {
     "singularName": "xe-dich-vu",
     "pluralName": "xe-dich-vus",
-    "displayName": "Xe dịch vụ"
+    "displayName": "Xe dịch vụ",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

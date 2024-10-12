@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tien_ich_xes",
+  "info": {
+    "singularName": "tien-ich-xe",
+    "pluralName": "tien-ich-xes",
+    "displayName": "Tiện ích xe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ten_tien_ich": {
+      "type": "string"
+    }
+  }
+}

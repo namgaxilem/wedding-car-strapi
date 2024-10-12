@@ -581,6 +581,39 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tieu_de: Schema.Attribute.String;
+    hinh_dai_dien: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    noi_dung_chinh: Schema.Attribute.RichText;
+    mo_ta_ngan_gon: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -640,6 +673,33 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTienIchXeTienIchXe extends Struct.CollectionTypeSchema {
+  collectionName: 'tien_ich_xes';
+  info: {
+    singularName: 'tien-ich-xe';
+    pluralName: 'tien-ich-xes';
+    displayName: 'Ti\u1EC7n \u00EDch xe';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ten_tien_ich: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tien-ich-xe.tien-ich-xe'
+    >;
+  };
+}
+
 export interface ApiXeCuoiXeCuoi extends Struct.CollectionTypeSchema {
   collectionName: 'xe_cuois';
   info: {
@@ -677,6 +737,7 @@ export interface ApiXeDichVuXeDichVu extends Struct.CollectionTypeSchema {
     singularName: 'xe-dich-vu';
     pluralName: 'xe-dich-vus';
     displayName: 'Xe d\u1ECBch v\u1EE5';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1079,8 +1140,10 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::tien-ich-xe.tien-ich-xe': ApiTienIchXeTienIchXe;
       'api::xe-cuoi.xe-cuoi': ApiXeCuoiXeCuoi;
       'api::xe-dich-vu.xe-dich-vu': ApiXeDichVuXeDichVu;
       'admin::permission': AdminPermission;

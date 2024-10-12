@@ -44,6 +44,11 @@
     "thong_tin_ngan_gon": {
       "type": "text",
       "maxLength": 155
+    },
+    "tien_ich_xes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tien-ich-xe.tien-ich-xe"
     }
   }
 }

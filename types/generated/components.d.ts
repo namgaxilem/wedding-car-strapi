@@ -23,6 +23,10 @@ export interface SharedThongTinXe extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 155;
       }>;
+    tien_ich_xes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tien-ich-xe.tien-ich-xe'
+    >;
   };
 }
 
